@@ -1,0 +1,17 @@
+{
+  "solax": {
+    "loginData": {
+      "loginPayload": {"username": "YOUR_EMAIL", "userpwd": "MD5_OF_YOUR_PASSWORD"},
+      "deviceLoginPayload": {"sn": "WIFI_SN", "userType": "9", "userId": "USER_ID", "firmId": "FIRM_ID"}
+    },
+    "paramsBasePayload": {"optType": "setReg", "num": 86, "sn": "WIFI_SN", "inverterSn": "INVERTER_SN", "deviceType": 99},
+    "monitoringToken": "MONITORING_TOKEN"
+  },
+  "telegram": {"bot_token": "BOT_TOKEN", "chat_id": "-100XXXXXXXXXX"},
+  "threshold_eur_mwh": 0,
+  "lookahead_minutes": 5,
+  "timezone": "Europe/Prague",
+  "language": "en",
+  "also_set_workmode": false,
+  "allow_export_value": 15000
+}

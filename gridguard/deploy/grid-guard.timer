@@ -1,0 +1,12 @@
+[Unit]
+Description=Run grid-guard at each 15-minute OTE price-segment boundary (+1s)
+
+[Timer]
+# OTE spot prices change on 15-minute boundaries; fire 1s past each boundary
+# (:00:01, :15:01, :30:01, :45:01) so we act at the very start of each segment.
+OnCalendar=*-*-* *:00,15,30,45:01
+AccuracySec=1s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

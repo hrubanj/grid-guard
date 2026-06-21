@@ -1,0 +1,13 @@
+[Unit]
+Description=grid-guard: forbid grid export when spot price is non-positive
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/grid-guard -config /etc/grid-guard/config.json run
+# Optional: capture verbose logs
+# ExecStart=/usr/local/bin/grid-guard -config /etc/grid-guard/config.json -verbose run
+
+[Install]
+WantedBy=multi-user.target

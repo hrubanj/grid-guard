@@ -1,0 +1,4 @@
+# grid-guard — at each 15-minute OTE price-segment boundary, offset +1s
+# (alternative to the systemd timer). cron has 1-minute granularity, so the
+# `sleep 1` provides the 1-second offset to land just past the boundary.
+0,15,30,45 * * * * sleep 1 && /usr/local/bin/grid-guard -config /etc/grid-guard/config.json run >> /var/log/grid-guard.log 2>&1

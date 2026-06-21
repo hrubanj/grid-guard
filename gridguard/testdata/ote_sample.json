@@ -1,0 +1,14 @@
+{
+  "data": {
+    "dataLine": [
+      {"title": "Množství (MWh)", "point": [{"x": "1", "y": 100.0}]},
+      {"title": "15min cena (EUR/MWh)", "point": [
+        {"x": "1", "y": 128.93},
+        {"x": "2", "y": 116.59},
+        {"x": "3", "y": -50.8},
+        {"x": "4", "y": 12.4}
+      ]},
+      {"title": "60min cena (EUR/MWh)", "point": [{"x": "1", "y": 120.0}]}
+    ]
+  }
+}
