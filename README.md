@@ -22,21 +22,34 @@ config field — see [Configure](#configure). The chart image is always English/
 
 ## Example
 
-When the spot price dips to or below the threshold, grid-guard stops export and
-sends a Telegram message with a chart of the day's prices (green positive / red
-negative bars, with a "now" marker). Real OTE data for 21 Jun 2026 — a typical
-solar-glut day where midday prices collapse to ~0:
+grid-guard sends a Telegram message with a day-price chart **at each switch** —
+once when it stops export and once when it resumes. Real OTE data for 21 Jun 2026,
+a typical solar-glut day where midday prices collapse to ~0 (green positive / red
+negative bars, the "now" marker at the moment it acts):
 
-![Example day-price chart](docs/sample-chart.png)
+**10:45 — prices reach zero, export stopped**
+
+![Export stopped at the start of the negative window](docs/sample-stop.png)
 
 > 🛑 **Stopping grid export**
-> Spot price is dropping to **-0.01 EUR/MWh** (≤ 0) — we don't sell at a loss.
+> Spot price is dropping to **0 EUR/MWh** (≤ 0) — we don't sell at a loss.
 > ⏳ Negative-price window: **10:45–15:45**
 > ▶️ Export resumes at **15:45**
 > 🔋 Battery **96 %** · grid feed-in **0 W**
-> 🕒 Jun 21, 2026 13:10
+> 🕒 Jun 21, 2026 10:45
 
-(The same message in Czech with `"language": "cs"`: *Zastavuji prodej do sítě …*)
+**15:45 — prices positive again, export resumed**
+
+![Export resumed at the end of the negative window](docs/sample-resume.png)
+
+> ✅ **Resuming grid export**
+> Spot price is positive again: **0.03 EUR/MWh**.
+> ⏭️ No further negative-price window in available data.
+> 🔋 Battery **96 %** · grid feed-in **0 W**
+> 🕒 Jun 21, 2026 15:45
+
+(The same messages in Czech with `"language": "cs"`. The battery / feed-in line is
+live inverter telemetry — illustrative here.)
 
 ## Logic
 
