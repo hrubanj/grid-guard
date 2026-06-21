@@ -24,14 +24,15 @@ config field — see [Configure](#configure). The chart image is always English/
 
 When the spot price dips to or below the threshold, grid-guard stops export and
 sends a Telegram message with a chart of the day's prices (green positive / red
-negative bars, with a "now" marker):
+negative bars, with a "now" marker). Real OTE data for 21 Jun 2026 — a typical
+solar-glut day where midday prices collapse to ~0:
 
 ![Example day-price chart](docs/sample-chart.png)
 
 > 🛑 **Stopping grid export**
-> Spot price is dropping to **-50 EUR/MWh** (≤ 0) — we don't sell at a loss.
-> ⏳ Negative-price window: **10:45–15:00**
-> ▶️ Export resumes at **15:00**
+> Spot price is dropping to **-0.01 EUR/MWh** (≤ 0) — we don't sell at a loss.
+> ⏳ Negative-price window: **10:45–15:45**
+> ▶️ Export resumes at **15:45**
 > 🔋 Battery **96 %** · grid feed-in **0 W**
 > 🕒 Jun 21, 2026 13:10
 
