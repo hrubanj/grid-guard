@@ -53,7 +53,7 @@ host clock.
 
 ## Redeploy a new build
 
-From `gridguard/` on your operator machine:
+From the repo root on your operator machine:
 ```bash
 DEPLOY_TARGET=<HOST> DEPLOY_PATH=<DEPLOY_PATH> ./deploy.sh push
 ssh <HOST> 'sudo install -m755 <DEPLOY_PATH>/grid-guard /usr/local/bin/grid-guard'

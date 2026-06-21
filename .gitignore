@@ -1,2 +1,14 @@
-.DS_Store
+# build artifacts
+bin/
+/grid-guard
+/gridguard
+
+# local config with real secrets — never commit
+config.local.json
+config.json
+deploy/config.local.json
+deploy/config.json
+
+# editor / OS
 .idea/
+.DS_Store

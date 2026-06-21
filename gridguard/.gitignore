@@ -1,6 +1,0 @@
-bin/
-deploy/config.local.json
-deploy/config.json
-config.local.json
-/gridguard
-.DS_Store

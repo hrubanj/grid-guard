@@ -1,4 +1,4 @@
-module gridguard
+module github.com/hrubanj/grid-guard
 
 go 1.26
 
