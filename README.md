@@ -206,4 +206,4 @@ Global flags: `-config PATH` (or `$GRID_GUARD_CONFIG`), `-dry-run`, `-verbose`.
 
 ## License
 
-[MIT](LICENSE) © Jiri Hruban. Provided as-is; see the disclaimer above.
+[MIT](LICENSE) © Jiri Hruban, Milan Hruban. Provided as-is; see the disclaimer above.
